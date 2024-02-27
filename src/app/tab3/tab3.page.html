@@ -1,0 +1,48 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>
+      Лабораторна робота #1
+    </ion-title>
+  </ion-toolbar>
+  <ion-toolbar>
+    <ion-title>Виконав студент КН-31, Погорілий Данило</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-card>
+    <ion-card-header>Завдання №3</ion-card-header>
+    <ion-card-content>
+      <p>
+        Згенерувати матрицю
+        розміром NxN.
+        Виокремити за
+        допомогою кольору
+        усі однакові за
+        модулем елементи.
+      </p>
+    </ion-card-content>
+    <ion-item>
+      <ion-label position="floating">Розмір матриці</ion-label>
+      <ion-input type="number" id="n" value="4" [(ngModel)]="n"></ion-input>
+    </ion-item>
+    <ion-button expand="block" (click)="generateMatrix()">
+      Сформувати масив
+    </ion-button>
+    <ion-item>
+      <ion-grid>
+        <ion-row *ngFor="let row of a">
+          <ion-col *ngFor="let num of row" [ngStyle]="{ 'background-color': getColor(num) }">
+            {{ num }}
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+    </ion-item>
+  </ion-card>
+
+</ion-content>
+<ion-footer>
+  <ion-toolbar>
+    <ion-title>Лабораторна робота №1</ion-title>
+  </ion-toolbar>
+</ion-footer>
