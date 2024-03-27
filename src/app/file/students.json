@@ -1,0 +1,34 @@
+{
+  "0": [
+    {
+      "name": "KN31",
+      "course": 3,
+      "monitor": "Драчук Денис",
+      "amount": 10
+    }
+  ],
+  "1": [
+    {
+      "name": "KN32",
+      "course": 3,
+      "monitor": "Веріємчук Денис",
+      "amount": 26
+    }
+  ],
+  "2": [
+    {
+      "name": "AnD31",
+      "course": 3,
+      "monitor": "Пархоменко Едуард",
+      "amount": 14
+    }
+  ],
+  "3": [
+    {
+      "name": "KN21",
+      "course": 2,
+      "monitor": "Іванов Іван",
+      "amount": 29
+    }
+  ]
+}
