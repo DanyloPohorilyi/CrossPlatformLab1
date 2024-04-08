@@ -1,77 +1,69 @@
 import { Component, OnInit } from '@angular/core';
-
+import { LoadingController } from '@ionic/angular';
 @Component({
   selector: 'app-file',
   templateUrl: 'file.page.html',
   styleUrls: ['file.page.scss'],
 })
 export class FilePage implements OnInit {
-  jsonData: { [key: string]: any } | null = null;
+  data: any = [];
+  data_groups: any = [];
+  showDetails: boolean[] = new Array(1000).fill(false);
+
+  dataUrl = 'https://api.jsonbin.io/v3/b/6613d79ae41b4d34e4e1195a';
+  loading: any;
+
   maxStudents: number = 0;
 
-  constructor() { }
+  constructor(public loadingController: LoadingController) { }
 
-  ngOnInit(): void { }
-
-  getGroupValues() {
-    if (this.jsonData !== null) {
-      return Object.values(this.jsonData);
-    }
-    return [];
-  }
-
-  toggleExpanded(group: any) {
-    group.expanded = !group.expanded;
-  }
-
-  async readJson(event: any) {
-    const file = event.target.files[0];
-    if (file) {
-      const reader = new FileReader();
-      reader.onload = async (e) => {
-        if (e.target) {
-          const contents = e.target.result;
-          this.jsonData = JSON.parse(contents as string);
-          await this.highlightGroups();
+  async load() {
+    this.loading = await this.loadingController.create({
+      spinner: 'bubbles',
+      message: 'Завантаження...'
+    });
+    await this.loading.present();
+    fetch(this.dataUrl).then(res => res.json())
+      .then(json => {
+        this.data = json;
+        this.data = this.data.record;
+        let i = 0;
+        console.log(this.data[1]);
+        while (this.data[i] != undefined) {
+          this.data_groups.push(this.data[i][0]);
+          i++;
         }
-      };
-      reader.readAsText(file);
+        this.getMaxStudent();
+        this.loading.dismiss();
+      });
+  }
+
+  toggleDetails(i: number) {
+    if (this.showDetails[i]) {
+      this.showDetails[i] = false;
+    }
+    else {
+      this.showDetails[i] = true;
     }
   }
 
-  async highlightGroups() {
-    if (!this.jsonData) {
-      return;
-    }
-
-    for (const group of Object.values(this.jsonData) as any[]) {
-      group.expanded = false; // поле expanded для кожної групи
-      const amount = group[0].amount;
-      group.highlighted = amount < this.maxStudents;
-    }
-  }
-
-  highlightGroupsByMaxStudents(maxStudentsValue: any) {
-    const maxStudents = parseInt(maxStudentsValue, 10);
-
-    if (!this.jsonData || isNaN(maxStudents)) {
-      return;
-    }
-
-    for (const group of Object.values(this.jsonData) as any[]) {
-      const amount = group[0].amount;
-      const groupName = group[0].name;
-      const groupElement = document.getElementById(groupName);
-      if (groupElement) {
-        if (amount < maxStudents) {
-          groupElement.classList.add('highlighted'); // Додамо клас 'highlighted'
-        } else {
-          groupElement.classList.remove('highlighted'); // Видалимо клас 'highlighted'
-        }
+  getMaxStudent() {
+    const groupsWithLessStudents = [];
+    for (let i = 0; i < this.data.length; i++) {
+      const group = this.data[i];
+      const groupDetails = group[0];
+      if (groupDetails.amount < this.maxStudents) {
+        groupsWithLessStudents.push(groupDetails);
       }
     }
+    console.log('Група де кількість студентів меншеза число:', groupsWithLessStudents);
+    return groupsWithLessStudents;
   }
 
+  getColor(a: number, b: any) {
+    b = parseInt(b);
+    return a < b ? 'yellow' : '';
+  }
 
-
+  ngOnInit(): void { }
 }

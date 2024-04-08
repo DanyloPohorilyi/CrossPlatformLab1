@@ -1,0 +1,44 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>
+      Лабораторна робота #4
+    </ion-title>
+  </ion-toolbar>
+  <ion-toolbar>
+    <ion-title>Виконав студент КН-31, Погорілий Данило</ion-title>
+  </ion-toolbar>
+  <ion-toolbar color="primary">
+    <ion-buttons slot="start">
+      <ion-menu-button menu="first" color="dark"></ion-menu-button>
+    </ion-buttons>
+    <ion-title>Лабораторні роботи</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title>Лабораторна робота №4</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      <ion-text>
+        Скласти програму з абстрактним батьківським класом і двома об'єктами -нащадками. Реалізувати циклічне виведення параметрів об'єктів, використовуючи 
+        поліморфний контейнер - масив об'єктів базового класу (кількість об'єктів> = 5).
+      </ion-text>
+      <ion-text>
+        Завдання 1. Батьківський клас - Одяг (поле назва). Нащадки: Пальто (поле розмір V), Костюм (поле зріст H).
+        Метод: витрати тканини
+      </ion-text>
+      <ion-text>
+        Завдання 2. Організувати обчислення сумарної витрати тканини.
+      </ion-text>
+
+      <ion-input type="number" value="5" #Inputn></ion-input>
+      <ion-button (click)="ras(Inputn.value)" expand="block" shape="round">
+        Click me
+      </ion-button>
+      <p *ngFor="let c of clothes">{{ c.display() }}</p>
+      <p>Загальна вартість: {{ totalCost }}</p>
+    </ion-card-content>
+  </ion-card>
+</ion-content>
