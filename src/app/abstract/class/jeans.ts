@@ -5,7 +5,7 @@ export class Jeans extends Clothes {
   Waist: any;
   constructor(name: string, Waist: any) {
     super(name);
-    if (this.Waist < 0) throw new Error('Waist < 0');
+    if (Waist < 0) throw new Error('Waist < 0');
     this.Waist = Waist;
   }
   override FabricCosts() {

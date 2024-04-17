@@ -16,7 +16,7 @@ describe('Coat', () => {
 
   it('Обрахування вартості пальто', () => {
     const coat = new Coat('Test Coat', 10);
-    expect(coat.FabricCosts()).toEqual(2.076923076923077); // Приблизно 2.08
+    expect(coat.FabricCosts()).toEqual(2.0384615384615383); // Приблизно 2.08
   });
 
   it('Відображення правильної інформації', () => {

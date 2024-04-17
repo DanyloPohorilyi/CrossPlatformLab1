@@ -5,7 +5,7 @@ export class Coat extends Clothes {
   V: any;
   constructor(name: string, V: any) {
     super(name);
-    if (this.V < 5) throw new Error('V < 5');
+    if (V < 5) throw new Error('V < 5');
     this.V = V;
   }
   override FabricCosts() {

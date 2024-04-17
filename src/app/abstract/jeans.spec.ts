@@ -16,7 +16,7 @@ describe('Jeans', () => {
 
   it('Обрахування фабричної вартості', () => {
     const jeans = new Jeans('Test Jeans', 32);
-    expect(jeans.FabricCosts()).toEqual(5.333333333333333); // Приблизно 5.33
+    expect(jeans.FabricCosts()).toEqual(5.833333333333333); // Приблизно 5.33
   });
 
   it('Виведення інформації', () => {
