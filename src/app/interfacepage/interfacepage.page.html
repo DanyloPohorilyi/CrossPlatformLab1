@@ -1,0 +1,17 @@
+<app-my-header name="Лабораторна робота №6"></app-my-header>
+
+<ion-content [fullscreen]="true">
+  <ion-card-header>
+    <ion-title>Завдання</ion-title>
+    <p>Дано наступна ієрархія класів</p>
+    <p>Журнал, книга, друковане видання, підручник</p>
+  </ion-card-header>
+  <ion-card-content>
+    <ion-button (click)="onClick()" expand="block" shape="round">
+      Розрахунок
+    </ion-button>
+    <ion-item>
+      {{ show }}
+    </ion-item>
+  </ion-card-content>
+</ion-content>
