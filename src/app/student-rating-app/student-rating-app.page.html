@@ -1,0 +1,26 @@
+<app-my-header name="Лабораторна робота №8"></app-my-header>
+
+<ion-content [fullscreen]="true">
+  <ion-header collapse="condense">
+
+  </ion-header>
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title>Лабораторна робота №8</ion-card-title>
+      <p>Рейтинг успішності студентів:</p>
+      <ul>
+        <li>ПІБ студента.</li>
+        <li>Група.</li>
+        <li>Середній бал.</li>
+        <li>Розмір стипендії.</li>
+      </ul>
+      <p>Інформаціє, яка додається динамічно:</p>
+      <ul>
+        <li>Список дисциплін і балів отриманих за кожну дисципліну</li>
+      </ul>
+    </ion-card-header>
+    <ion-card-content>
+      <app-student-rating-form></app-student-rating-form>
+    </ion-card-content>
+  </ion-card>
+</ion-content>

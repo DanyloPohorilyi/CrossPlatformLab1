@@ -1,0 +1,42 @@
+<form [formGroup]="ratingForm" (ngSubmit)="onSubmit()">
+  <ion-item>
+    <div *ngIf="fullNameError" class="error-message" style="color: red; font-size: 12px;">{{ fullNameError }}</div>
+    <ion-label position="floating">ПІБ студента</ion-label>
+    <ion-input formControlName="fullName"></ion-input>
+  </ion-item>
+  <ion-item>
+    <div *ngIf="groupError" class="error-message" style="color: red; font-size: 12px;">{{ groupError }}</div>
+    <ion-label position="floating">Група</ion-label>
+    <ion-input formControlName="group"></ion-input>
+  </ion-item>
+  <ion-item>
+    <div *ngIf="gradeError" class="error-message" style="color: red; font-size: 12px;">{{ gradeError }}</div>
+    <ion-label position="floating">Середній бал</ion-label>
+    <ion-input formControlName="averageGrade"></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label position="floating">Розмір стипендії</ion-label>
+    <ion-input formControlName="scholarshipAmount"></ion-input>
+  </ion-item>
+
+  <ion-list formArrayName="disciplineScores">
+    <ng-container *ngFor="let disciplineScore of getDisciplineControls(); let i = index">
+      <ion-item [formGroupName]="i">
+        <ion-label position="floating">Дисципліна</ion-label>
+        <ion-input formControlName="discipline"></ion-input>
+        <ion-label position="floating">Бал</ion-label>
+        <ion-input formControlName="score"></ion-input>
+        <ion-button (click)="removeDiscipline(i)" color="danger" slot="end">Видалити</ion-button>
+      </ion-item>
+    </ng-container>
+  </ion-list>
+
+
+
+
+
+
+  <ion-button expand="block" (click)="addDiscipline()">Додати дисципліну</ion-button>
+
+  <ion-button expand="block" type="submit" [disabled]="ratingForm.invalid">Submit</ion-button>
+</form>

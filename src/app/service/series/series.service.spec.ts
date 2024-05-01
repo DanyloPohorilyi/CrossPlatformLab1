@@ -14,7 +14,7 @@ describe('SeriesService', () => {
     expect(service).toBeTruthy();
   });
 
-  fit('Сума ряду значення x = 0.1, y = 0.1816', () => {
+  it('Сума ряду значення x = 0.1, y = 0.1816', () => {
     let x = 0.1;
     let y = 0.1816;
     let y1 = service.getSeries(x);

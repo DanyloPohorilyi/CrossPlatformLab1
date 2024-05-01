@@ -25,6 +25,14 @@ const routes: Routes = [
   {
     path: 'servicepage',
     loadChildren: () => import('./servicepage/servicepage.module').then( m => m.ServicepagePageModule)
+  },
+  {
+    path: 'my-react-form',
+    loadChildren: () => import('./my-react-form/my-react-form.module').then( m => m.MyReactFormPageModule)
+  },
+  {
+    path: 'student-rating-app',
+    loadChildren: () => import('./student-rating-app/student-rating-app.module').then( m => m.StudentRatingAppPageModule)
   }
 ];
 @NgModule({
