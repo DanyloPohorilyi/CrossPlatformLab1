@@ -1,0 +1,21 @@
+<app-student-rating-form (studentRatingOutput)="addRating($event)"></app-student-rating-form>
+<ng-container *ngFor="let rating of studentRatings; let i=index">
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title>{{ rating.fullName }}</ion-card-title>
+      <ion-card-title>{{ rating.group }}</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      <p>Avarage grade: {{ rating.averageGrade }} points</p>
+      <p>Scholarship: {{ rating.scholarshipAmount }}$</p>
+      <ion-item *ngFor="let discipline of rating.disciplineScores">
+        {{ discipline.discipline }} - {{ discipline.score }}
+      </ion-item>
+    </ion-card-content>
+    <ion-button (click)="update()">
+      Редагувати
+    </ion-button>
+    <app-updateform [studentRating]="rating" [show]="show_update" *ngIf="show_update" (showChange)="showUp($event)"
+      (ratingChange)="update_save($event, i)"></app-updateform>
+  </ion-card>
+</ng-container>

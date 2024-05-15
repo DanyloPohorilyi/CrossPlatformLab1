@@ -9,6 +9,8 @@ import { StudentRatingAppPageRoutingModule } from './student-rating-app-routing.
 import { StudentRatingAppPage } from './student-rating-app.page';
 import { ComponentModule } from '../component.module';
 import { StudentRatingFormComponent } from './student-rating-form/student-rating-form.component';
+import { ViewformComponent } from '../viewform/viewform.component';
+import { UpdateformComponent } from '../updateform/updateform.component';
 
 @NgModule({
   imports: [
@@ -19,6 +21,6 @@ import { StudentRatingFormComponent } from './student-rating-form/student-rating
     ReactiveFormsModule,
     ComponentModule
   ],
-  declarations: [StudentRatingAppPage, StudentRatingFormComponent]
+  declarations: [StudentRatingAppPage, StudentRatingFormComponent, ViewformComponent, UpdateformComponent]
 })
 export class StudentRatingAppPageModule { }

@@ -1,0 +1,21 @@
+<ion-card>
+  <ion-card-header>
+    <ion-card-title>
+      <ion-label position="floating">Піб</ion-label>
+      <ion-input type="text" [value]="studentRating.fullName" #Inputa></ion-input>
+    </ion-card-title>
+    <ion-card-title>
+      <ion-label position="floating">Group</ion-label>
+      <ion-input type="text" [value]="studentRating.group" #InputGroup></ion-input>
+    </ion-card-title>
+  </ion-card-header>
+  <ion-card-content>
+    <ion-label position="floating">Avarage Grade</ion-label>
+    <ion-input type="text" [value]="studentRating.averageGrade" #InputGrade></ion-input>
+    <ion-label position="floating">Scholarship</ion-label>
+    <ion-input type="text" [value]="studentRating.scholarshipAmount" #InputScholar></ion-input>
+  </ion-card-content>
+  <ion-button (click)="save(Inputa.value, InputGroup.value, InputGrade.value, InputScholar.value)">
+    Зберігти
+  </ion-button>
+</ion-card>

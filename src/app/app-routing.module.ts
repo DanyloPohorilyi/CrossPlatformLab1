@@ -8,32 +8,33 @@ const routes: Routes = [
   },
   {
     path: 'graph',
-    loadChildren: () => import('./graph/graph.module').then( m => m.GraphPageModule)
+    loadChildren: () => import('./graph/graph.module').then(m => m.GraphPageModule)
   },
   {
     path: 'file',
-    loadChildren: () => import('./file/file.module').then( m => m.FilePageModule)
+    loadChildren: () => import('./file/file.module').then(m => m.FilePageModule)
   },
   {
     path: 'abstract',
-    loadChildren: () => import('./abstract/abstract.module').then( m => m.AbstractPageModule)
+    loadChildren: () => import('./abstract/abstract.module').then(m => m.AbstractPageModule)
   },
   {
     path: 'interfacepage',
-    loadChildren: () => import('./interfacepage/interfacepage.module').then( m => m.InterfacepagePageModule)
+    loadChildren: () => import('./interfacepage/interfacepage.module').then(m => m.InterfacepagePageModule)
   },
   {
     path: 'servicepage',
-    loadChildren: () => import('./servicepage/servicepage.module').then( m => m.ServicepagePageModule)
+    loadChildren: () => import('./servicepage/servicepage.module').then(m => m.ServicepagePageModule)
   },
   {
     path: 'my-react-form',
-    loadChildren: () => import('./my-react-form/my-react-form.module').then( m => m.MyReactFormPageModule)
+    loadChildren: () => import('./my-react-form/my-react-form.module').then(m => m.MyReactFormPageModule)
   },
   {
     path: 'student-rating-app',
-    loadChildren: () => import('./student-rating-app/student-rating-app.module').then( m => m.StudentRatingAppPageModule)
-  }
+    loadChildren: () => import('./student-rating-app/student-rating-app.module').then(m => m.StudentRatingAppPageModule)
+  },
+
 ];
 @NgModule({
   imports: [
@@ -41,4 +42,4 @@ const routes: Routes = [
   ],
   exports: [RouterModule]
 })
-export class AppRoutingModule {}
+export class AppRoutingModule { }

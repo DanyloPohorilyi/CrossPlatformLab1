@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { FormArray, FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { StudentRating } from './class/StudentRating';
 import { FullNameValidationService } from '../full-name-validation.service';
@@ -11,7 +11,7 @@ import { ValidationService } from '../validation.service';
   styleUrls: ['./student-rating-form.component.scss'],
 })
 export class StudentRatingFormComponent implements OnInit {
-
+  @Output() studentRatingOutput: EventEmitter<StudentRating> = new EventEmitter<StudentRating>();
   ratingForm!: FormGroup;
   studentRating!: StudentRating;
   fullNameError: string = '';
@@ -76,6 +76,7 @@ export class StudentRatingFormComponent implements OnInit {
     this.groupError = this.validationService.validateGroup(group);
     if (!this.fullNameError && !this.gradeError && !this.groupError) {
       console.log('Дані введені правильно. Відправлення форми...', this.ratingForm.value);
+      this.studentRatingOutput.emit(this.ratingForm.value);
     }
   }
 
