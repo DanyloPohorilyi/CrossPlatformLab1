@@ -34,6 +34,10 @@ const routes: Routes = [
     path: 'student-rating-app',
     loadChildren: () => import('./student-rating-app/student-rating-app.module').then(m => m.StudentRatingAppPageModule)
   },
+  {
+    path: 'observablepage',
+    loadChildren: () => import('./observablepage/observablepage.module').then( m => m.ObservablepagePageModule)
+  },
 
 ];
 @NgModule({

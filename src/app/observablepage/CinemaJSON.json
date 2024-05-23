@@ -1,0 +1,146 @@
+{
+  "Genre": [
+    {
+      "id": 1,
+      "name": "Action"
+    },
+    {
+      "id": 2,
+      "name": "Drama"
+    },
+    {
+      "id": 3,
+      "name": "Comedy"
+    },
+    {
+      "id": 4,
+      "name": "Thriller"
+    },
+    {
+      "id": 5,
+      "name": "Sci-Fi"
+    }
+  ],
+  "Movie": [
+    {
+      "name": "The Dark Knight",
+      "genre_id": 1,
+      "year": 2008,
+      "rating": 9.0
+    },
+    {
+      "name": "Inception",
+      "genre_id": 5,
+      "year": 2010,
+      "rating": 8.8
+    },
+    {
+      "name": "Forrest Gump",
+      "genre_id": 2,
+      "year": 1994,
+      "rating": 8.8
+    },
+    {
+      "name": "The Matrix",
+      "genre_id": 5,
+      "year": 1999,
+      "rating": 8.7
+    },
+    {
+      "name": "The Shawshank Redemption",
+      "genre_id": 2,
+      "year": 1994,
+      "rating": 9.3
+    },
+    {
+      "name": "Gladiator",
+      "genre_id": 1,
+      "year": 2000,
+      "rating": 8.5
+    },
+    {
+      "name": "Interstellar",
+      "genre_id": 5,
+      "year": 2014,
+      "rating": 8.6
+    },
+    {
+      "name": "The Godfather",
+      "genre_id": 2,
+      "year": 1972,
+      "rating": 9.2
+    },
+    {
+      "name": "Pulp Fiction",
+      "genre_id": 4,
+      "year": 1994,
+      "rating": 8.9
+    },
+    {
+      "name": "The Avengers",
+      "genre_id": 1,
+      "year": 2012,
+      "rating": 8.0
+    },
+    {
+      "name": "Joker",
+      "genre_id": 2,
+      "year": 2019,
+      "rating": 8.4
+    },
+    {
+      "name": "Guardians of the Galaxy",
+      "genre_id": 1,
+      "year": 2014,
+      "rating": 8.0
+    },
+    {
+      "name": "Toy Story",
+      "genre_id": 3,
+      "year": 1995,
+      "rating": 8.3
+    },
+    {
+      "name": "The Silence of the Lambs",
+      "genre_id": 4,
+      "year": 1991,
+      "rating": 8.6
+    },
+    {
+      "name": "Back to the Future",
+      "genre_id": 5,
+      "year": 1985,
+      "rating": 8.5
+    },
+    {
+      "name": "Fight Club",
+      "genre_id": 4,
+      "year": 1999,
+      "rating": 8.8
+    },
+    {
+      "name": "Schindler's List",
+      "genre_id": 2,
+      "year": 1993,
+      "rating": 9.0
+    },
+    {
+      "name": "The Hangover",
+      "genre_id": 3,
+      "year": 2009,
+      "rating": 7.7
+    },
+    {
+      "name": "Django Unchained",
+      "genre_id": 2,
+      "year": 2012,
+      "rating": 8.4
+    },
+    {
+      "name": "Spider-Man: Into the Spider-Verse",
+      "genre_id": 1,
+      "year": 2018,
+      "rating": 8.4
+    }
+  ]
+}
